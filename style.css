@@ -1,0 +1,102 @@
+:root {
+  --fundo: #f3f5f7;
+  --superficie: #ffffff;
+  --texto: #1b2430;
+  --texto-suave: #5b6676;
+  --linha: #dce1e7;
+  --destaque: #0b6b57;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+  color: var(--texto);
+  background: var(--fundo);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+/* ---------- Cabeçalho e rodapé ---------- */
+.topo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2rem;
+}
+
+.topo h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.topo p {
+  max-width: 58ch;
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+}
+
+.rodape {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 3rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- Caixas ---------- */
+
+/* Telas largas: as caixas ficam lado a lado (horizontal). */
+.caixas {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+}
+
+.caixa {
+  flex: 1 1 0; /* todas com a mesma largura */
+  background: var(--superficie);
+  border: 1px solid var(--linha);
+  border-top: 4px solid var(--destaque);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.numero {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--destaque);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.caixa h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.caixa p {
+  color: var(--texto-suave);
+}
+
+/* Telas estreitas (768px ou menos): as caixas empilham (vertical). */
+@media (max-width: 768px) {
+  .caixas {
+    flex-direction: column;
+  }
+
+  .caixa {
+    flex: 0 0 auto;
+  }
+}
